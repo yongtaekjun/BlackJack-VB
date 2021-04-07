@@ -21,7 +21,7 @@ Public Class Form1
     End Sub
 
     Private Sub DistributeCards()
-        For i As UInt16 = 0 To 10 Step 1
+        For i As UInt16 = 0 To 9 Step 1
             intCardsOnHand(i) = -1
         Next
         Dim IndexOfCard As UInt16 = 0
