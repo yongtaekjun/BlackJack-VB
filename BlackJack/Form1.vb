@@ -171,5 +171,51 @@ Public Class BlackJack
         b = temp '32
         tbMessage.Text = "A : " & a & " B : " & b & vbCrLf
 
+        Dim array_numbers(9) As UInt16
+
+        Dim array_numbers0 As UInt16 = 0
+        Dim array_numbers1 As UInt16 = 1
+        Dim array_numbers2 As UInt16 = 2
+        Dim array_numbers3 As UInt16 = 3
+        Dim array_numbers4 As UInt16 = 4
+        Dim array_numbers5 As UInt16 = 5
+        Dim array_numbers6 As UInt16 = 6
+        Dim array_numbers7 As UInt16 = 7
+        Dim array_numbers8 As UInt16 = 8
+        Dim array_numbers9 As UInt16 = 9
+
+        'random_number = Random(0,51)
+
+
+        For i As UInt16 = 0 To 9 Step 1
+            array_numbers(i) = i '11,12,13 ,..... 20
+        Next
+
+        tbMessage.Text = array_numbers0 & " " _
+        & array_numbers1 & " " _
+        & array_numbers2 & " " _
+        & array_numbers3 & " " _
+        & array_numbers4 & " " _
+        & array_numbers5 & " " _
+        & array_numbers6 & " " _
+        & array_numbers7 & " " _
+        & array_numbers8 & " " _
+        & array_numbers9 & " "
+
+        For i As UInt16 = 0 To 9 Step 1
+            tbMessage.Text += array_numbers(i) & " " '11,12,13 ,..... 20
+        Next
+
+
+        Dim list_numbers As List(Of UInt16) = New List(Of UInt16)
+        For i As UInt16 = 0 To 9 Step 1
+            list_numbers.Add(i) '11,12,13 ,..... 20
+        Next
+
+        For Each number In list_numbers
+            tbMessage.Text += number & " " '11,12,13 ,..... 20
+        Next
+
+
     End Sub
 End Class
