@@ -181,50 +181,99 @@ Public Class BlackJack
         Dim IsDuplicatedNumber As Boolean = False
         Dim CountOfCard As UInt16 = 0
 
-        Do While CountOfCard < 10
-            RandomNumber = Generator.Next(0, 51)
-            Select Case RandomNumber
-                Case r0, r1, r2, r3, r4, r5, r6, r7, r8, r9
-                    'IsDuplicatedNumber = True
-                Case Else
-                    Select Case CountOfCard
-                        Case 0
-                            r0 = RandomNumber
-                        Case 1
-                            r1 = RandomNumber
-                        Case 2
-                            r2 = RandomNumber
-                        Case 3
-                            r3 = RandomNumber
-                        Case 4
-                            r4 = RandomNumber
-                        Case 5
-                            r5 = RandomNumber
-                        Case 6
-                            r6 = RandomNumber
-                        Case 7
-                            r7 = RandomNumber
-                        Case 8
-                            r8 = RandomNumber
-                        Case 9
-                            r9 = RandomNumber
-                    End Select
-                    CountOfCard += 1
-            End Select
+        Dim i As UInt16
 
+        i = 11
+        Do While i < 10
+            i += 1
         Loop
 
+        tbMessage.Text += " First value is " & i & vbCrLf '10
 
-        tbMessage.Text += r0 & vbCrLf _
-            & r1 & vbCrLf _
-            & r2 & vbCrLf _
-            & r3 & vbCrLf _
-            & r4 & vbCrLf _
-            & r5 & vbCrLf _
-            & r6 & vbCrLf _
-            & r7 & vbCrLf _
-            & r8 & vbCrLf _
-            & r9 & vbCrLf
+
+        i = 11
+        Do
+            i += 1
+        Loop While True
+
+        tbMessage.Text += " Second value is " & i & vbCrLf '10
+
+        'Do While CountOfCard < 10
+        '    RandomNumber = Generator.Next(0, 51)
+        '    Select Case RandomNumber
+        '        Case r0, r1, r2, r3, r4, r5, r6, r7, r8, r9
+        '            'IsDuplicatedNumber = True
+        '        Case Else
+        '            Select Case CountOfCard
+        '                Case 0
+        '                    r0 = RandomNumber
+        '                Case 1
+        '                    r1 = RandomNumber
+        '                Case 2
+        '                    r2 = RandomNumber
+        '                Case 3
+        '                    r3 = RandomNumber
+        '                Case 4
+        '                    r4 = RandomNumber
+        '                Case 5
+        '                    r5 = RandomNumber
+        '                Case 6
+        '                    r6 = RandomNumber
+        '                Case 7
+        '                    r7 = RandomNumber
+        '                Case 8
+        '                    r8 = RandomNumber
+        '                Case 9
+        '                    r9 = RandomNumber
+        '            End Select
+        '            CountOfCard += 1
+        '    End Select
+
+        'Loop
+
+        'Do
+        '    RandomNumber = Generator.Next(0, 51)
+        '    Select Case RandomNumber
+        '        Case r0, r1, r2, r3, r4, r5, r6, r7, r8, r9
+        '            'IsDuplicatedNumber = True
+        '        Case Else
+        '            Select Case CountOfCard
+        '                Case 0
+        '                    r0 = RandomNumber
+        '                Case 1
+        '                    r1 = RandomNumber
+        '                Case 2
+        '                    r2 = RandomNumber
+        '                Case 3
+        '                    r3 = RandomNumber
+        '                Case 4
+        '                    r4 = RandomNumber
+        '                Case 5
+        '                    r5 = RandomNumber
+        '                Case 6
+        '                    r6 = RandomNumber
+        '                Case 7
+        '                    r7 = RandomNumber
+        '                Case 8
+        '                    r8 = RandomNumber
+        '                Case 9
+        '                    r9 = RandomNumber
+        '            End Select
+        '            CountOfCard += 1
+        '    End Select
+
+        'Loop While CountOfCard < 10
+
+        'tbMessage.Text += r0 & vbCrLf _
+        '    & r1 & vbCrLf _
+        '    & r2 & vbCrLf _
+        '    & r3 & vbCrLf _
+        '    & r4 & vbCrLf _
+        '    & r5 & vbCrLf _
+        '    & r6 & vbCrLf _
+        '    & r7 & vbCrLf _
+        '    & r8 & vbCrLf _
+        '    & r9 & vbCrLf
 
     End Sub
 End Class
