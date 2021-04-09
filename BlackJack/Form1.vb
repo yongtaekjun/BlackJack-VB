@@ -162,60 +162,69 @@ Public Class BlackJack
     End Sub
 
     Private Sub btnTest_Click(sender As Object, e As EventArgs) Handles btnTest.Click
-        Dim a As UInt16 = 32
-        Dim b As UInt16 = 41
-        Dim temp As UInt16
-        'tbMessage.Text = "A : " & a & " B : " & b & vbCrLf
-        temp = a
-        a = b '41
-        b = temp '32
-        tbMessage.Text = "A : " & a & " B : " & b & vbCrLf
 
-        Dim array_numbers(9) As UInt16
+        Dim Generator As System.Random = New System.Random()
+        Dim nCards As UInt16 = 51
 
-        Dim array_numbers0 As UInt16 = 0
-        Dim array_numbers1 As UInt16 = 1
-        Dim array_numbers2 As UInt16 = 2
-        Dim array_numbers3 As UInt16 = 3
-        Dim array_numbers4 As UInt16 = 4
-        Dim array_numbers5 As UInt16 = 5
-        Dim array_numbers6 As UInt16 = 6
-        Dim array_numbers7 As UInt16 = 7
-        Dim array_numbers8 As UInt16 = 8
-        Dim array_numbers9 As UInt16 = 9
+        Dim r0 As UInt16 = 99
+        Dim r1 As UInt16 = 99
+        Dim r2 As UInt16 = 99
+        Dim r3 As UInt16 = 99
+        Dim r4 As UInt16 = 99
+        Dim r5 As UInt16 = 99
+        Dim r6 As UInt16 = 99
+        Dim r7 As UInt16 = 99
+        Dim r8 As UInt16 = 99
+        Dim r9 As UInt16 = 99
 
-        'random_number = Random(0,51)
+        Dim RandomNumber As UInt16 = 0
+        Dim IsDuplicatedNumber As Boolean = False
+        Dim CountOfCard As UInt16 = 0
+
+        Do While CountOfCard < 10
+            RandomNumber = Generator.Next(0, 51)
+            Select Case RandomNumber
+                Case r0, r1, r2, r3, r4, r5, r6, r7, r8, r9
+                    'IsDuplicatedNumber = True
+                Case Else
+                    Select Case CountOfCard
+                        Case 0
+                            r0 = RandomNumber
+                        Case 1
+                            r1 = RandomNumber
+                        Case 2
+                            r2 = RandomNumber
+                        Case 3
+                            r3 = RandomNumber
+                        Case 4
+                            r4 = RandomNumber
+                        Case 5
+                            r5 = RandomNumber
+                        Case 6
+                            r6 = RandomNumber
+                        Case 7
+                            r7 = RandomNumber
+                        Case 8
+                            r8 = RandomNumber
+                        Case 9
+                            r9 = RandomNumber
+                    End Select
+                    CountOfCard += 1
+            End Select
+
+        Loop
 
 
-        For i As UInt16 = 0 To 9 Step 1
-            array_numbers(i) = i '11,12,13 ,..... 20
-        Next
-
-        tbMessage.Text = array_numbers0 & " " _
-        & array_numbers1 & " " _
-        & array_numbers2 & " " _
-        & array_numbers3 & " " _
-        & array_numbers4 & " " _
-        & array_numbers5 & " " _
-        & array_numbers6 & " " _
-        & array_numbers7 & " " _
-        & array_numbers8 & " " _
-        & array_numbers9 & " "
-
-        For i As UInt16 = 0 To 9 Step 1
-            tbMessage.Text += array_numbers(i) & " " '11,12,13 ,..... 20
-        Next
-
-
-        Dim list_numbers As List(Of UInt16) = New List(Of UInt16)
-        For i As UInt16 = 0 To 9 Step 1
-            list_numbers.Add(i) '11,12,13 ,..... 20
-        Next
-
-        For Each number In list_numbers
-            tbMessage.Text += number & " " '11,12,13 ,..... 20
-        Next
-
+        tbMessage.Text += r0 & vbCrLf _
+            & r1 & vbCrLf _
+            & r2 & vbCrLf _
+            & r3 & vbCrLf _
+            & r4 & vbCrLf _
+            & r5 & vbCrLf _
+            & r6 & vbCrLf _
+            & r7 & vbCrLf _
+            & r8 & vbCrLf _
+            & r9 & vbCrLf
 
     End Sub
 End Class
